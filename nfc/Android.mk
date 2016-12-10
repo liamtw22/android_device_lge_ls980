@@ -1,5 +1,4 @@
-#
-# Copyright (C) 2011 The Android Open-Source Project
+# Copyright (C) 2011 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,22 +11,15 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
 
-$(call inherit-product-if-exists, vendor/lge/ls980/ls980-vendor.mk)
-$(call inherit-product, device/lge/g2-common/g2.mk)
+LOCAL_PATH := $(call my-dir)
 
-## overlays
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+include $(CLEAR_VARS)
 
-# NFC packages
-PRODUCT_PACKAGES += \
-    android.hardware.nfc@1.0-impl \
-    nfc.msm8974 \
-    libnfc \
-    libnfc_jni \
-    Nfc
+LOCAL_MODULE := nfc.msm8974
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_SRC_FILES := nfc_pn544.c
+LOCAL_SHARED_LIBRARIES := liblog libcutils
+LOCAL_MODULE_TAGS := optional
 
-# Sensors
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/sensor_def_ls980.conf:system/etc/sensor_def_variable.conf
+include $(BUILD_SHARED_LIBRARY)

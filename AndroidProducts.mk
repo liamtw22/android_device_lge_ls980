@@ -14,9 +14,4 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_ls980.mk
-
-COMMON_LUNCH_CHOICES := \
-    lineage_ls980-user \
-    lineage_ls980-userdebug \
-    lineage_ls980-eng
+    $(LOCAL_DIR)/havoc_ls980.mk

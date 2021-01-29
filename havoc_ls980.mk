@@ -1,12 +1,12 @@
 # Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/havoc/config/common_full_phone.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/lge/ls980/ls980.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := ls980
-PRODUCT_NAME := lineage_ls980
+PRODUCT_NAME := havoc_ls980
 PRODUCT_BRAND := LGE
 PRODUCT_MODEL := LG-LS980
 PRODUCT_MANUFACTURER := lge
